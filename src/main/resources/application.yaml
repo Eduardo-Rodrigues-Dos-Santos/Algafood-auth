@@ -1,9 +1,12 @@
 spring:
 
   datasource:
-    url: jdbc:mysql://172.20.0.2/alga_food?createDatabaseIfNotExist=true&serverTimezone=UTC
-    username: alga
-    password: toor
+    hikari:
+      username: ${DB_USERNAME}
+      password: ${DB_PASSWORD}
+      jdbc-url: ${DB_URL}
+      maximum-pool-size: 5
+      minimum-idle: 3
 
   jpa:
     open-in-view: false
